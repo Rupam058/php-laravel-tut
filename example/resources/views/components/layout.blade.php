@@ -9,10 +9,10 @@
 
 <body>
     <nav>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
-        <a href="/meet-our-team">Team</a>
+        <x-nav-link href="/">Home</x-nav-link>
+        <x-nav-link href="/contact" style="color : green">Contact</x-nav-link>
+        <x-nav-link href="/about">About</x-nav-link>
+        <x-nav-link href="/team">Team</x-nav-link>
     </nav>
 
     <!-- <?php echo $slot; ?> -->
