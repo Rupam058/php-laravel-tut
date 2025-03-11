@@ -5,10 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Job;
 use Illuminate\Http\Request;
 
-class JobController extends Controller
-{
-    public function index()
-    {
+class JobController extends Controller {
+    public function index() {
         $jobs = Job::with('employer')->latest()->Paginate(4);
 
         return view('jobs.index', [
@@ -16,18 +14,15 @@ class JobController extends Controller
         ]);
     }
 
-    public function create()
-    {
+    public function create() {
         return view('jobs.create');
     }
 
-    public function show(Job $job)
-    {
+    public function show(Job $job) {
         return view("jobs.show", ['job' => $job]);
     }
 
-    public function store()
-    {
+    public function store() {
         // validation...
         request()->validate([
             'title' => ['required', 'min:3'],
@@ -43,15 +38,13 @@ class JobController extends Controller
         return redirect('/jobs');
     }
 
-    public function edit(Job $job)
-    {
+    public function edit(Job $job) {
         return view("jobs.edit", [
             "job" => $job
         ]);
     }
 
-    public function update(Job $job)
-    {
+    public function update(Job $job) {
         // authorize (On Hold...)
 
         // validate
@@ -80,8 +73,7 @@ class JobController extends Controller
         return redirect(route('jobs.show', $job));
     }
 
-    public function destroy(Job $job)
-    {
+    public function destroy(Job $job) {
         // authorize
         // delete the job
         // $job = Job::findOrFail($id);
