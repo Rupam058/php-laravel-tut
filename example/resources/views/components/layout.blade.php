@@ -162,8 +162,10 @@
                {{ $heading }}
             </h1>
 
-            <x-button href="/jobs/create">Create
-               Job</x-button>
+            @auth
+               <x-button href="/jobs/create">Create
+                  Job</x-button>
+            @endauth
          </div>
 
       </header>
