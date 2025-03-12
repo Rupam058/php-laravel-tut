@@ -6,6 +6,7 @@ namespace App\Providers;
 
 use App\Models\Job;
 use App\Models\User;
+use App\Policies\JobPolicy;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Gate;
@@ -31,4 +32,8 @@ class AppServiceProvider extends ServiceProvider {
         //     return $job->employer->user->is($user);
         // });
     }
+
+    protected $policies = [
+        Job::class => JobPolicy::class,
+    ];
 }

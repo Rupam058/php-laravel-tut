@@ -3,7 +3,9 @@
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\JobController;
+use App\Mail\JobPosted;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Mail;
 
 Route::view('/', 'home');
 Route::view('/contact', 'contact');
@@ -16,13 +18,13 @@ Route::get('/jobs/{job}', [JobController::class, 'show'])->name('jobs.show');
 
 Route::get('/jobs/{job}/edit', [JobController::class, 'edit'])
     ->middleware('auth')
-    // ->can('edit-job', 'job')
-    ->can('edit', 'job');
+    // ->can('edit-job', 'job');
+    ->can('editJob', 'job');
 
 Route::patch('/jobs/{job}', [JobController::class, 'update']);
 Route::delete('/jobs/{job}', [JobController::class, 'destroy']);
 
-// Registeration Routes
+// Registeration Routesd
 Route::get('/register', [RegisteredUserController::class, 'create']);
 Route::post('/register', [RegisteredUserController::class, 'store']);
 
