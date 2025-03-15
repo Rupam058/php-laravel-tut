@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source "../**/*.blade.php";
+@source "../**/*.js";
+@source "../**/*.vue";
+
+@layer theme {
+    :root,
+    :host {
+        --font-sans:
+            "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
+            "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+            "Noto Color Emoji";
+        --custom-black: #060606;
+    }
+}
+
+@layer base {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    body {
+        line-height: inherit;
+    }
+}
+
+@layer components;
+
+@layer utilities {
+    .custom-black {
+        color: var(--custom-black);
+    }
+    .bg-custom-black {
+        background-color: var(--custom-black);
+    }
+    .border-custom-black {
+        border-color: var(--custom-black);
+    }
+}
