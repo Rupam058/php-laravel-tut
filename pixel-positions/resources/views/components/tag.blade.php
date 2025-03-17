@@ -1,4 +1,4 @@
-@props(['size' => 'base'])
+@props(['tag', 'size' => 'base'])
 
 @php
    $classes = 'font-bold transition-colors 
@@ -14,6 +14,6 @@
 @endphp
 
 <a
-   href="#"
+   href="/tags/{{ strtolower($tag->name) }}"
    class="{{ $classes }}"
->{{ $slot }}</a>
+>{{ $tag->name }}</a>
