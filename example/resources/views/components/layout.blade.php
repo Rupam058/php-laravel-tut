@@ -18,8 +18,8 @@
 <body class="h-full">
    <div class="min-h-full">
       <nav class="bg-gray-800">
-         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="flex h-16 items-center justify-between">
+         <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
                <div class="flex items-center">
                   <div class="shrink-0">
                      <img
@@ -29,7 +29,7 @@
                      >
                   </div>
                   <div class="hidden md:block">
-                     <div class="ml-10 flex items-baseline space-x-4">
+                     <div class="flex items-baseline ml-10 space-x-4">
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                         <x-navLink
                            href="/"
@@ -47,7 +47,7 @@
                   </div>
                </div>
                <div class="hidden md:block">
-                  <div class="ml-4 flex items-center md:ml-6">
+                  <div class="flex items-center ml-4 md:ml-6">
                      @guest
                         <x-navLink
                            href="/login"
@@ -70,7 +70,7 @@
                      @endauth
                   </div>
                </div>
-               <div class="-mr-2 flex md:hidden">
+               <div class="flex -mr-2 md:hidden">
                   @guest
                      <x-navLink
                         href="/login"
@@ -90,34 +90,34 @@
             class="md:hidden"
             id="mobile-menu"
          >
-            <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                <a
                   href="/"
-                  class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
+                  class="block px-3 py-2 text-base font-medium text-white bg-gray-900 rounded-md"
                   aria-current="page"
                >Home</a>
                <a
                   href="/about"
-                  class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  class="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white"
                >About</a>
                <a
                   href="/contact"
-                  class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  class="block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white"
                >Contact</a>
 
             </div>
-            <div class="border-t border-gray-700 pt-4 pb-3">
+            <div class="pt-4 pb-3 border-t border-gray-700">
                <div class="flex items-center px-5">
                   <div class="shrink-0">
                      <img
-                        class="size-10 rounded-full"
+                        class="rounded-full size-10"
                         src="https://laracasts.com/images/lary-ai-face.svg"
                         alt=""
                      >
                   </div>
                   <div class="ml-3">
-                     <div class="text-base/5 font-medium text-white">
+                     <div class="font-medium text-white text-base/5">
                         Lary
                         Robot
                      </div>
@@ -127,7 +127,7 @@
                   </div>
                   <button
                      type="button"
-                     class="relative ml-auto shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden"
+                     class="relative p-1 ml-auto text-gray-400 bg-gray-800 rounded-full shrink-0 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden"
                   >
                      <span class="absolute -inset-1.5"></span>
                      <span class="sr-only">View
@@ -156,7 +156,7 @@
 
       <header class="bg-white shadow-sm">
          <div
-            class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 sm:flex sm:justify-between"
+            class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8 sm:flex sm:justify-between"
          >
             <h1 class="text-3xl font-bold tracking-tight text-gray-900">
                {{ $heading }}
@@ -170,7 +170,7 @@
 
       </header>
       <main>
-         <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+         <div class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
             {{ $slot }}
          </div>
       </main>

@@ -11,7 +11,7 @@
    <title>Pixel Position</title>
 </head>
 
-<body class="text-white bg-custom-black">
+<body class="mb-20 text-white bg-custom-black">
    <div class="px-10">
       <nav
          class="flex items-center justify-between py-4 border-b border-white/10"
@@ -29,9 +29,26 @@
             <a href="#">Companies</a>
          </div>
 
-         <div>
-            Post a Job
-         </div>
+         @auth
+            <div class="flex space-x-6 font-bold">
+               <a href="/jobs/create">Post a Job</a>
+               <form
+                  method = "POST"
+                  action='/logout'
+               >
+                  @csrf
+                  @method('DELETE')
+                  <button class="cursor-pointer">Log Out</button>
+               </form>
+            </div>
+         @endauth
+
+         @guest
+            <div class="space-x-6 font-bold">
+               <a href="/register">Sign Up</a>
+               <a href="/login">Log In</a>
+            </div>
+         @endguest
       </nav>
 
       <main class="mt-10 max-w-[968px] mx-auto">

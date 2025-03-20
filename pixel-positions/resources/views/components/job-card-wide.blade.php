@@ -2,7 +2,7 @@
 
 <x-panel class="flex gap-x-6">
    <div>
-      <x-employer-logo />
+      <x-employer-logo :employer="$job->employer" />
    </div>
 
    <div class="flex flex-col flex-1">
@@ -13,7 +13,13 @@
 
       <h3
          class="mt-2 text-xl font-bold duration-300 group-hover:text-blue-600 transition-color">
-         {{ $job->title }}</h3>
+         <a
+            href="{{ $job->url }}"
+            target="_blank"
+         >
+            {{ $job->title }}
+         </a>
+      </h3>
       <p class="mt-auto text-sm text-gray-400">{{ $job->schedule }} - From
          {{ $job->salary }}</p>
 
@@ -21,10 +27,7 @@
 
    <div>
       @foreach ($job->tags as $tag)
-         <x-tag
-            :tag="$tag"
-            size="small"
-         ></x-tag>
+         <x-tag :tag="$tag"></x-tag>
       @endforeach
    </div>
 </x-panel>

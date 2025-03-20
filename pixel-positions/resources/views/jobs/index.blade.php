@@ -3,16 +3,16 @@
       <section class="pt-6 text-center">
          <h1 class="text-4xl font-bold">Let's Find Your next Job</h1>
 
-         <form
-            action=''
+         <x-forms.form
+            action="/search"
             class="mt-6"
          >
-            <input
-               type="text"
+            <x-forms.input
+               :label="false"
+               name="q"
                placeholder="Web Developer..."
-               class="w-full max-w-xl px-5 py-4 border-white/10 bg-white/5 rounded-xl"
-            >
-         </form>
+            />
+         </x-forms.form>
       </section>
 
       <section class="pt-10">
